@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <style>
+        .failed{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login page</h2>
+
+    <form th:action="@{/authenticatedUser}" method="POST">
+        <div th:if="${param.error}">
+            <i class="failed">Not valid</i>
+        </div>
+        <P>
+            username: <input type="text" name="username">
+        </P>
+        <P>
+            password: <input type="password" name="password">
+        </P>
+        <input type="submit" value="L2ogin" />
+    </form>
+
+</body>
+</html>
